@@ -1,0 +1,4 @@
+The scripts in this directory would be executed when modifying the already created 
+launch-template for the web and app tiers. Modifiction would be done simplying by setting up a new 
+version of the launch template and using the initial one as the base. This new version would then 
+be set as the default, so it is picked up by the autosacling group setup...
