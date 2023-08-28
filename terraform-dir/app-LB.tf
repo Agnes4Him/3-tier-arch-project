@@ -21,7 +21,7 @@ resource "aws_lb_target_group" "appTG" {
     port                = 7000
     interval            = 240
     protocol            = "HTTP"
-    path                = "/health"
+    path                = "/"
     matcher             = "200"
     healthy_threshold   = 3
     unhealthy_threshold = 3
