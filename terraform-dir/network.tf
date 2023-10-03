@@ -103,7 +103,7 @@ resource "aws_route_table_association" "public_rtb_assoc1" {
 
 # associating the route table to web subnet B
 resource "aws_route_table_association" "public_rtb_assoc2" {
-  subnet_id = aws_subnet.web_subnetA.id
+  subnet_id = aws_subnet.web_subnetB.id
   route_table_id = aws_route_table.public_rtb.id
 }
 # creating an elastic IP for a NAT gateway
@@ -149,7 +149,7 @@ resource "aws_route_table" "private_rtb" {
 }
 
 
-# Associating route table for NAT gateway to public subnet A
+# Associating route table for NAT gateway to app subnetA
 resource "aws_route_table_association" "private_rtb_assoc1" {
   depends_on = [
     aws_route_table.private_rtb
@@ -162,7 +162,7 @@ resource "aws_route_table_association" "private_rtb_assoc1" {
   route_table_id = aws_route_table.private_rtb.id
 }
 
-# Associating route table for NAT gateway to public subnet B
+# Associating route table for NAT gateway to app subnetB
 resource "aws_route_table_association" "private_rtb_assoc2" {
   depends_on = [
     aws_route_table.private_rtb
@@ -175,7 +175,7 @@ resource "aws_route_table_association" "private_rtb_assoc2" {
   route_table_id = aws_route_table.private_rtb.id
 }
 
-# Associating route table for NAT gateway to public subnet B
+# Associating route table for NAT gateway to db subnetA
 resource "aws_route_table_association" "private_rtb_assoc3" {
   depends_on = [
     aws_route_table.private_rtb
@@ -188,7 +188,7 @@ resource "aws_route_table_association" "private_rtb_assoc3" {
   route_table_id = aws_route_table.private_rtb.id
 }
 
-# Associating route table for NAT gateway to public subnet B
+# Associating route table for NAT gateway to db subnetB
 resource "aws_route_table_association" "private_rtb_assoc4" {
   depends_on = [
     aws_route_table.private_rtb

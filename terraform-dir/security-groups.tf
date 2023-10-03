@@ -62,7 +62,7 @@ resource "aws_security_group" "web_sg" {
     to_port         = 0
     protocol        = "-1"
     security_groups = [aws_security_group.applb_sg.id]
-    cidr_blocks       = ["0.0.0.0/0"]
+    //cidr_blocks       = ["0.0.0.0/0"]
   }
 }
 
@@ -87,7 +87,7 @@ resource "aws_security_group" "app_sg" {
 }
 
 resource "aws_security_group" "db_sg" {
-  name   = "app_sg"
+  name   = "db_sg"
   vpc_id = aws_vpc.demo_vpc.id
 
   ingress {
